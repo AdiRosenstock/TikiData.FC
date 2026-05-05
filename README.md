@@ -59,5 +59,5 @@ Hi, I’m Adi Rosenstock, a student at Northwestern University majoring in Data 
 Through TikiData FC, I’m building a portfolio of football analytics projects, combining data analysis with visual storytelling to better understand the game.
 
 📫 Contact:
-- LinkedIn: https://www.linkedin.com/in/adirosenstock  
+- LinkedIn: https://www.linkedin.com/in/adirosenstock
 - Email: adirosenstock2026@u.northwestern.edu
