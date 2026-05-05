@@ -48,6 +48,7 @@ TikiData/
 │   ├── XG.ipynb
 │   ├── visuals/
 │   └── outputs/
+```
 
 ---
 
