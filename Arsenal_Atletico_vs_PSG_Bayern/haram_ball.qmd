@@ -1,0 +1,115 @@
+---
+title: "haram_ball"
+format: html
+---
+
+
+```{r}
+ggplot(df_main, aes(x = stat, y = total, fill = match)) +
+  geom_col(position = position_dodge(width = 0.75), width = 0.7) +
+  geom_text(
+    aes(label = total),
+    position = position_dodge(width = 0.75),
+    vjust = -0.3,
+    size = 4
+  ) +
+  scale_fill_manual(values = colors) +
+  labs(
+    title = "Total Football vs Haram Ball",
+    subtitle = "Arsenal 1–1 Atlético de Madrid vs PSG 5–4 Bayern Munich",
+    x = "",
+    y = "Total"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.title = element_blank(),
+    plot.title = element_text(face = "bold", size = 18),
+    plot.subtitle = element_text(size = 12),
+    axis.text.x = element_text(angle = 30, hjust = 1, face = "bold")
+  ) +
+  ylim(0, max(df_main$total, na.rm = TRUE) * 1.2)
+
+
+```
+
+
+```{R}
+
+ggplot(df_main, aes(x = stat, y = total, fill = match)) +
+  geom_col(position = position_dodge(width = 0.75), width = 0.65) +
+  
+  # Better labels
+  geom_text(
+    aes(label = total),
+    position = position_dodge(width = 0.75),
+    vjust = -0.4,
+    size = 5,
+    fontface = "bold"
+  ) +
+  
+  scale_fill_manual(values = c("#E41A1C", "#083D77")) +
+  
+  labs(
+    title = "Total Football vs Haram Ball",
+    subtitle = "Arsenal 1–1 Atlético vs PSG 5–4 Bayern",
+    x = "",
+    y = ""
+  ) +
+  
+  theme_minimal(base_size = 14) +
+  
+  theme(
+    legend.position = "top",
+    legend.title = element_blank(),
+    
+    # Titles
+    plot.title = element_text(face = "bold", size = 20),
+    plot.subtitle = element_text(size = 13),
+    
+    # Clean axes
+    axis.text.x = element_text(angle = 30, hjust = 1, face = "bold"),
+    axis.text.y = element_blank(),
+    
+    # Remove clutter
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank()
+  ) +
+  
+  ylim(0, max(df_main$total) * 1.15)
+
+```
+
+
+```{R}
+
+ggplot(fpg, aes(x = match, y = fouls_per_goal, fill = match)) +
+  geom_col(width = 0.45) +
+  geom_text(
+    aes(label = round(fouls_per_goal, 1)),
+    vjust = -0.6,
+    size = 7,
+    fontface = "bold"
+  ) +
+  scale_fill_manual(values = c("#E41A1C", "#083D77")) +
+  scale_y_continuous(
+    limits = c(0, 30),
+    breaks = c(0, 5, 10, 15, 20, 25, 30)
+  ) +
+  labs(
+    title = "Haram Ball Index",
+    subtitle = "Fouls per goal: Arsenal vs Atlético & PSG vs Bayern",
+    x = "",
+    y = "Fouls per goal"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(face = "bold", size = 22),
+    plot.subtitle = element_text(size = 13),
+    axis.text.x = element_text(face = "bold", size = 12),
+    panel.grid.minor = element_blank()
+  )
+
+```
+
+
